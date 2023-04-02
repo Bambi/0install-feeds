@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<interface xmlns="http://zero-install.sourceforge.net/2004/injector/interface">
+  <name>helix</name>
+  <summary>A post-modern text editor</summary>
+
+  <description>
+    Helix is a modal text editor with built-in support for multiple selections, Language Server Protocol (LSP), tree-sitter, and experimental support for Debug Adapter Protocol (DAP).
+  </description>
+
+  <homepage>https://helix-editor.com/</homepage>
+  <needs-terminal/>
+  <icon type="image/png" href="https://helix-editor.com/favicon.png"/>
+  <feed-for interface="http://Bambi.github.io/0install-feeds/helix.xml"/>
+
+  <group license="OSI Approved :: Mozilla Public License 2.0" stability="stable">
+    <command name="run" path="hx"/>
+
+    <implementation version="{version}" arch="Linux-x86_64">
+      <manifest-digest/>
+      <archive href="https://github.com/helix-editor/helix/releases/download/{version}/helix-{version}-x86_64-linux.tar.xz"/>
+    </implementation>
+  </group>
+</interface>
