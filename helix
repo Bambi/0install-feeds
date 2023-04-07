@@ -1,0 +1,21 @@
+#!/bin/bash
+set -Eeuo pipefail
+IFS=$'\n\t'
+
+op=add
+if [ "$1" = -i ]; then
+		op=set
+		0publish docs/helix.xml --set-interface-uri=https://bambi.github.io/0install-feeds/helix.xml
+fi
+version=$1
+reldate=${2:-today}
+arch=x86_64
+[ -f docs/helix ] && op=add
+
+curl -LO https://github.com/helix-editor/helix/releases/download/${version}/helix-${version}-x86_64-linux.tar.xz
+
+0publish docs/helix.xml --${op}-version=${version} --set-released=${reldate} --set-arch=Linux-${arch} \
+	--archive-url=https://github.com/helix-editor/helix/releases/download/${version}/helix-${version}-${arch}-linux.tar.xz \
+	--archive-file=helix-${version}-${arch}-linux.tar.xz --archive-extract=helix-${version}-${arch}-linux
+
+0publish docs/helix.xml --xmlsign
