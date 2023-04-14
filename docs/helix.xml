@@ -2,37 +2,61 @@
 <?xml-stylesheet type='text/xsl' href='interface.xsl'?>
 <interface xmlns="http://zero-install.sourceforge.net/2004/injector/interface" uri="https://bambi.github.io/0install-feeds/helix.xml">
   <name>Helix</name>
-  <summary>A post-modern modal text editor</summary>
-  <description>
-  A Kakoune / Neovim inspired editor, written in Rust.
+  <summary>A post-modern text editor</summary>
 
-  The editing model is very heavily based on Kakoune; during development I found myself agreeing with most of Kakoune's design decisions.
+  <description>
+    Helix is a modal text editor with built-in support for multiple selections, Language Server Protocol (LSP), tree-sitter, and experimental support for Debug Adapter Protocol (DAP).
   </description>
 
   <homepage>https://helix-editor.com/</homepage>
+  <needs-terminal/>
+  <icon type="image/png" href="https://helix-editor.com/favicon.png"/>
 
-  <icon href="https://helix-editor.com/favicon.png" type="image/png"/>
-
-  <!-- Optionally, uncomment this to give the address of
-       the signed master interface: -->
-  <!-- <feed-for interface='http://site/interface'/> -->
-
-  <group license="OSI Approved :: Mozilla Public License 2.0">
+  <group license="OSI Approved :: Mozilla Public License 2.0" stability="stable">
     <command name="run" path="hx"/>
-    <implementation id="sha1new=6523a608517820ef211b3a7498865a8d33a13c92" version="22.12" released="2022-12-07">
+
+    <implementation version="23.03" arch="Linux-x86_64" released="2023-03-31" id="sha1new=780f19ff23aeb4702679eac0c1d8451c33b36ecb">
+      <manifest-digest sha256new="ASBN4NTNH3SOLWV2O3O33HZ3ZRFXRKLVFBFLSYMLIYWZMJXYLWYA"/>
+      <archive href="https://github.com/helix-editor/helix/releases/download/23.03/helix-23.03-x86_64-linux.tar.xz" type="application/x-xz-compressed-tar" extract="helix-23.03-x86_64-linux" size="12721868"/>
+    </implementation>
+    <implementation version="23.03" arch="Linux-aarch64" released="2023-03-31" id="sha1new=c992b77f05db307e5c8e53b2a5f7659087f1bc75">
+      <manifest-digest sha256new="6PRJODZWQTDH2HCSX3MN4LDEOGHDZRS3VHZ2TI7IFKWXDQSCQCYA"/>
+      <archive href="https://github.com/helix-editor/helix/releases/download/23.03/helix-23.03-aarch64-linux.tar.xz" type="application/x-xz-compressed-tar" extract="helix-23.03-aarch64-linux" size="12678344"/>
+    </implementation>
+    <implementation version="23.03" arch="MacOSX-x86_64" released="2023-03-31" id="sha1new=6eba13264142099f0c71de5a600aebec54699431">
+      <manifest-digest sha256new="EW3KEEETZGCMMQGYCFDV4OYNQJ6TQYGLW7N52YMZKJUX4DWLWQOQ"/>
+      <archive href="https://github.com/helix-editor/helix/releases/download/23.03/helix-23.03-x86_64-macos.tar.xz" type="application/x-xz-compressed-tar" extract="helix-23.03-x86_64-macos" size="11549448"/>
+    </implementation>
+    <implementation version="23.03" arch="Windows-x86_64" released="2023-03-31" id="sha1new=2e9042a7a8683f68e168977b77d3ef54b803019a">
+      <manifest-digest sha256new="FWKTAII72XQVNIUAW3726JI4WFWPC46IQPJBWJREAQNW47XQT2SQ"/>
+      <archive href="https://github.com/helix-editor/helix/releases/download/23.03/helix-23.03-x86_64-windows.zip" type="application/zip" extract="helix-23.03-x86_64-windows" size="17456396"/>
+    </implementation>
+    <implementation version="22.12" arch="Linux-x86_64" released="2022-12-07" id="sha1new=6523a608517820ef211b3a7498865a8d33a13c92">
       <manifest-digest sha256new="T2R3HG4VEPY7RE2VCKOAH4FMYHKPRLB2H3GRN5VUWDKZQZUULLPQ"/>
-      <archive href="https://github.com/helix-editor/helix/releases/download/22.12/helix-22.12-x86_64-linux.tar.xz" size="11225124" extract="helix-22.12-x86_64-linux"/>
+      <archive href="https://github.com/helix-editor/helix/releases/download/22.12/helix-22.12-x86_64-linux.tar.xz" type="application/x-xz-compressed-tar" extract="helix-22.12-x86_64-linux" size="11225124"/>
+    </implementation>
+    <implementation version="22.12" arch="Linux-aarch64" released="2022-12-07" id="sha1new=92202b1210f9f60b965ed5f9d5bd5a9d9634ea4b">
+      <manifest-digest sha256new="O6WU232XULSWWULQLTBCP6FST4P373QIK7PFR3BDE6XR5O2GG66A"/>
+      <archive href="https://github.com/helix-editor/helix/releases/download/22.12/helix-22.12-aarch64-linux.tar.xz" type="application/x-xz-compressed-tar" extract="helix-22.12-aarch64-linux" size="11237496"/>
+    </implementation>
+    <implementation version="22.12" arch="MacOSX-x86_64" released="2022-12-07" id="sha1new=d3a2b6e8d81ef3a87844b2b1c53f3fe73b12860f">
+      <manifest-digest sha256new="5WQ23GRPA5ZSXOHGVLSBWXD5WFFP6HLP2YSHTGGDVDLOWBRBW6FA"/>
+      <archive href="https://github.com/helix-editor/helix/releases/download/22.12/helix-22.12-x86_64-macos.tar.xz" type="application/x-xz-compressed-tar" extract="helix-22.12-x86_64-macos" size="10180952"/>
+    </implementation>
+    <implementation version="22.12" arch="Windows-x86_64" released="2022-12-07" id="sha1new=14011c53d6155ddadd7223338ccf3f0d86eb7619">
+      <manifest-digest sha256new="BIL24K6JHBHVQQXQQLIPIS2JLURYXMHBOJY5O37Z54H27PB5RH5Q"/>
+      <archive href="https://github.com/helix-editor/helix/releases/download/22.12/helix-22.12-x86_64-windows.zip" type="application/zip" extract="helix-22.12-x86_64-windows" size="15526398"/>
     </implementation>
   </group>
 </interface>
 <!-- Base64 Signature
-iQGzBAABCgAdFiEE9sih1SOj9VUUNCyKSRFlzYVNIzsFAmQwIcUACgkQSRFlzYVNIzsBOwwAvVLp
-wkmpvHbCDs5fJ2K4hgixfMh4NC6xdKTsD6p/6WRQIGRClu/OVpp7StZCU8wM5T5hc5CzP/+2uFe1
-1dp4C6KG0U0LIo0klmRU8AW0fZLRApfyDk/VHnorHvWJjuV+7fyoZ1VPL0X0TeveaHlNVog6u8Iq
-1bxhSA1QP8OsTiP+plZ8uaob2cDRrc6TckwbOx09ENTU/hPci7Pvr5Ue8yYTPiuLNw7ZFzw5xuwG
-KpwOuFHpLNAm7C3pK+4Y+P4eV15/hMa7N74L3tqvqvghjrkPJ1Hy3rddTc5WcewgnY1+oN2xx/pm
-mn34FctuvJ3gbwo+fLuAuOBsNfd4DHVnPF8L5rA8HtKW/3qVWDiq5AoxQmdx0rR6PRORmUy3t1RE
-BXEFjSJJ36ENvxOKNsQpgawlhNuc9UG4m2pDu2IR1KkqFC1dNjqKlgyBlmaAFzUC7cWY/qEfdneS
-bWH+R//cTERHng4X6LRIAAF8OwonwqtoED8PMxjztVfCuL+I4YJF
+iQGzBAABCgAdFiEE9sih1SOj9VUUNCyKSRFlzYVNIzsFAmQ4++sACgkQSRFlzYVNIztX3wv9FID5
+y9s3bGO9XRXbUjhNrb8EJjDiEKqjjeZS6Xg3iieTsJW4G7ICq714AjEi2/lBTsClK/GBO5R5ywmF
+DNRaaaixurhGMtxJ7WPqKaBpXrNrjsIKZoT/Q/fgsw1NKv9/Ks0sA77WyyAmx68w6e3P66IthLZY
++VWr1bre/hNvYZCuJTDLyIqLBfWEb34noZz3jMDDOC4zJWi3GirDZXx4BX2f3dd5e3OCRhg1gOIK
+UCQvy/9ryJTSp8+1Qj0Evmjv1dZTaBz8ICrJOfp2Mcoei5h+XyuYwvvtb0y5Sfijm+SIom2YDM+p
+8Gi03EE7+r1IraWc/EGsEqaXwStaEJU/Qe+cRW2eJ608IR9ElRhfrBCBHAuvA9u5Kw1VvQ5s8y4P
+U2ZHoOLUWxd3AP8j3/1HONO7tLz5l4PQlUkWzQom/oFLkre1NHVOsfd5hUi0mXheLNJZKssn5x5H
+p2PeXmbvn5qR6Oma4U+fXYEspiAaZF/FRbWs/J+5FSZbQ0AyXI63
 
 -->
